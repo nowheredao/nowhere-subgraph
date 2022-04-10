@@ -20,8 +20,8 @@ export function handleTransferBatch(event: TransferBatch): void {
     let to = event.params.to.toHex()
     const len = event.params.ids.length
     for (let i = 0; i < len; i++) {
-        let idFrom = from + "-" + event.params.ids[i]
-        let idTo = to + "-" + event.params.ids[i]
+        let idFrom = from + "-" + event.params.ids[i].toString()
+        let idTo = to + "-" + event.params.ids[i].toString()
 
         // from 地址减少 token 数量
         let fromRecord = MultiToken.load(idFrom)
@@ -68,8 +68,8 @@ export function handleTransferSingle(event: TransferSingle): void {
     ])
 
     // from 和 to 的 id 生成规则
-    let idFrom = event.params.from.toHex() + "-" + event.params.id
-    let idTo = event.params.to.toHex() + "-" + event.params.id
+    let idFrom = event.params.from.toHex() + "-" + event.params.id.toString()
+    let idTo = event.params.to.toHex() + "-" + event.params.id.toString()
 
     // from 地址减少 token 数量
     let fromRecord = MultiToken.load(idFrom)
