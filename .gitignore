@@ -1,0 +1,7 @@
+node_modules/
+.idea/
+
+generated/
+build/
+
+.DS_Store

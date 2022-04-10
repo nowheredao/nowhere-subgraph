@@ -1,0 +1,23 @@
+type TransferEvent @entity {
+    id: ID!
+    fnName: String!
+    operator: Bytes!
+    fromAddr: Bytes!
+    toAddr: Bytes!
+    ids: String!
+    values: String!
+    logIndex: BigInt!
+    blockNumber: BigInt!
+    emitTime: String!
+}
+
+type MultiToken @entity {
+    "owner-token"
+    id: ID!
+    "token id"
+    tokenId: BigInt!
+    "token count"
+    count: BigInt!
+    "token owner"
+    owner: Bytes!
+}
