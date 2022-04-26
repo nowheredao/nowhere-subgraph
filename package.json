@@ -2,9 +2,11 @@
   "name": "nowhere-subgraph",
   "license": "UNLICENSED",
   "scripts": {
+    "confgen": "mustache config/network-mumbai.json subgraph.template.yaml > subgraph.template.yaml",
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ xiaosongfu/nowhere-subgraph",
+    "deploy": "mustache config/network-mumbai.json subgraph.template.yaml > subgraph.template.yaml && graph deploy --node https://api.thegraph.com/deploy/ xiaosongfu/nowhere-subgraph",
+    "deploy:polygon": "mustache config/network-polygon.json subgraph.template.yaml > subgraph.template.yaml && graph deploy --node https://api.thegraph.com/deploy/ xiaosongfu/nowhere-subgraph-polygon",
     "create-local": "graph create --node http://localhost:8020/ xiaosongfu/nowhere-subgraph",
     "remove-local": "graph remove --node http://localhost:8020/ xiaosongfu/nowhere-subgraph",
     "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 xiaosongfu/nowhere-subgraph"
@@ -12,5 +14,8 @@
   "dependencies": {
     "@graphprotocol/graph-cli": "0.27.0",
     "@graphprotocol/graph-ts": "0.24.1"
+  },
+  "devDependencies": {
+    "mustache": "^4.2.0"
   }
 }
