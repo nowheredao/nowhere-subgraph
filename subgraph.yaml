@@ -4,11 +4,11 @@ schema:
 dataSources:
   - kind: ethereum
     name: ERC1155Proxy
-    network: matic
+    network: mumbai
     source:
-      address: "0x70E5f497c048D8189Bd5f4A209529f8EC45CFd2e"
+      address: "0xac7f2db94582e37710a9696cb3d647277b9de6e2"
       abi: ERC1155Proxy
-      startBlock: 23832134
+      startBlock: 26083814
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
